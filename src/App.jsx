@@ -58,6 +58,8 @@ const logos = [
   ),
 ];
 
+const logoUrl = new URL('prajna_labs_logo.png', import.meta.env.BASE_URL).href;
+
 export default function PrajnaLabsSite() {
   // set page title
   useEffect(() => {
@@ -70,7 +72,7 @@ export default function PrajnaLabsSite() {
       <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <a href="#home" className="flex items-center gap-3">
-            <img src="/prajna_labs_logo.png" alt="Prajna Labs" className="h-9 w-9 rounded-2xl" />
+            <img src={logoUrl} alt="Prajna Labs" className="h-9 w-9 rounded-2xl" />
             <span className="font-semibold tracking-tight">Prajna Labs</span>
           </a>
           <nav className="hidden gap-6 md:flex">
