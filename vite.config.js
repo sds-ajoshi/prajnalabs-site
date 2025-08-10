@@ -1,8 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { resolve } from "path";
 
-// Replace YOUR-USER with your GitHub username
 export default defineConfig({
   plugins: [react()],
-  base: "/prajnalabs-site/",
+  base: "/prajnalabs-site/",            // <- keep for GitHub Pages
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),   // <- this fixes "@/..." imports
+    },
+  },
 });
