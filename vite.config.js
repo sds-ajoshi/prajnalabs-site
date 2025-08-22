@@ -1,13 +1,7 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import { resolve } from "path";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: "/prajnalabs-site/",            // <- keep for GitHub Pages
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "src"),   // <- this fixes "@/..." imports
-    },
-  },
-});
+  base: '/', // ✅ custom domain uses site root
+})
