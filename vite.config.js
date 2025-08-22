@@ -1,7 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import path from 'node:path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // ✅ custom domain uses site root
+  base: '/',                        // for custom domain
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'), // <-- add this line
+    },
+  },
 })
